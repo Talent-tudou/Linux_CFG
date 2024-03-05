@@ -46,8 +46,6 @@ set backspace=2
 
 set nobackup
 
-set foldmethod=marker 
-
 set guifont=monospace\ 15.5
 
 nmap wn <C-w>n
@@ -55,13 +53,6 @@ nmap wv <C-w>v
 nmap wc <C-w>c 
 nmap ws <C-w>s
 
-function ShortTabLabel ()
-    let bufnrlist = tabpagebuflist (v:lnum)
-    let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
-    let filename = fnamemodify (label, ':t')
-    return filename
-endfunction
-set guitablabel=%{ShortTabLabel()}
 
 cabbr <expr> %% expand('%:p:h') 
 
